@@ -110,3 +110,86 @@ exports.updatePassword = catchAsyncError(async (req, res, next) => {
 
   sendToken(user, 200, res);
 });
+
+//update user profile
+exports.updateProfile = catchAsyncError(async (req, res, next) => {
+  const { name, email, avatar } = req.body;
+
+  const user = await User.findByIdAndUpdate(
+    req.user.id,
+    { name, email, avatar },
+    {
+      new: true,
+      runValidators: true,
+      useFindAndModify: false,
+    }
+  );
+
+  res.status(200).json({
+    success: true,
+  });
+});
+
+// get all Users (only Admin accessible api)
+exports.getAllUsers = catchAsyncError(async (req, res, next) => {
+  const users = await User.find();
+
+  res.status(200).json({
+    success: true,
+    users,
+  });
+});
+
+// get single user ( only admin accessible api)
+exports.getSingleUser = catchAsyncError(async (req, res, next) => {
+  const user = await User.findById(req.params.id);
+
+  if (!user) {
+    return next(
+      new ErrorHandler(`user does not exist with id -: ${req.params.id}`, 401)
+    );
+  }
+
+  res.status(200).json({
+    success: true,
+    user,
+  });
+});
+
+// update user role (only admin accessible api)
+exports.updateUserRole = catchAsyncError(async (req, res, next) => {
+  const user = await User.findById(req.params.id);
+
+  if (!user) {
+    return next(
+      new ErrorHandler(`user does not exist with id -: ${req.params.id}`, 401)
+    );
+  }
+
+  user.role = "admin";
+
+  await user.save();
+
+  res.status(200).json({
+    success: true,
+    message: "User role updated successfully.",
+  });
+});
+
+//delete user (only admin accessible api)
+exports.deleteUser = catchAsyncError(async (req, res, next) => {
+  const user = await User.findById(req.params.id);
+
+  if (!user) {
+    return next(
+      new ErrorHandler(`user does not exist with id -: ${req.params.id}`, 401)
+    );
+  }
+
+  await user.remove();
+
+  res.status(200).json({
+    success: true,
+    message: "User deleted successfully.",
+  });
+});
