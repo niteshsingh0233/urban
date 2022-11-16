@@ -5,6 +5,10 @@ const {
   getSingleHome,
   updateHome,
   deleteHome,
+  wishlistHome,
+  removeWishlist,
+  findNearbyHomes,
+  findFilteredHomes,
 } = require("../controllers/homeController");
 const {
   isAuthenticatedUser,
@@ -25,5 +29,16 @@ router
   .route("/admin/home/:id")
   .put(isAuthenticatedUser, authorizeRoles("admin"), updateHome)
   .delete(isAuthenticatedUser, authorizeRoles("admin"), deleteHome);
+
+router
+  .route("/user/home/wishlist/:id")
+  .put(isAuthenticatedUser, wishlistHome)
+  .delete(isAuthenticatedUser, removeWishlist);
+
+router.route("/homes/:area").get(isAuthenticatedUser, findNearbyHomes);
+
+router
+  .route("/homes/category/:category")
+  .get(isAuthenticatedUser, findFilteredHomes);
 
 module.exports = router;

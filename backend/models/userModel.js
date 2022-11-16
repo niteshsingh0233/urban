@@ -42,6 +42,12 @@ const userSchema = new mongoose.Schema({
       required: true,
     },
   },
+  wishList: [
+    {
+      type: mongoose.Schema.ObjectId,
+      ref: "Home",
+    },
+  ],
   createdAt: {
     type: Date,
     default: Date.now,
