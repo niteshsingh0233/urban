@@ -7,10 +7,10 @@ const sendEmail = async (options) => {
     service: process.env.SMTP_SERVICE,
     auth: {
       user: process.env.SMTP_EMAIL,
-      pass: "yynelxvaxqmxmzey",
+      pass: process.env.SMPT_PASSWORD,
     },
   });
-
+  //"yynelxvaxqmxmzey"
   const mailOptions = {
     from: process.env.SMTP_EMAIL,
     to: options.email,
