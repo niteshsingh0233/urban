@@ -9,6 +9,7 @@ const {
   removeWishlist,
   findNearbyHomes,
   findFilteredHomes,
+  priceFilterHomes,
 } = require("../controllers/homeController");
 const {
   isAuthenticatedUser,
@@ -40,5 +41,7 @@ router.route("/homes/:area").get(isAuthenticatedUser, findNearbyHomes);
 router
   .route("/homes/category/:category")
   .get(isAuthenticatedUser, findFilteredHomes);
+
+router.route("/homes/filter/price").get(isAuthenticatedUser, priceFilterHomes);
 
 module.exports = router;

@@ -17,6 +17,10 @@ app.use("/api/v1", userRouter);
 const homeRouter = require(`./routes/homeRoute`);
 app.use("/api/v1", homeRouter);
 
+// contact router
+const contactRouter = require(`./routes/contactRoute`);
+app.use("/api/v1", contactRouter);
+
 // Using the middleware for errors
 const errorMiddleware = require(`./middleware/error`);
 app.use(errorMiddleware);

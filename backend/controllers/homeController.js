@@ -221,3 +221,26 @@ exports.findFilteredHomes = catchAsyncError(async (req, res, next) => {
     homes,
   });
 });
+
+// filter homes based on price ranges
+exports.priceFilterHomes = catchAsyncError(async (req, res, next) => {
+  const { minP, maxP } = req.query;
+  let homes = await Home.find();
+
+  // console.log(minP, maxP);
+
+  homes = homes.filter(
+    (home) => home.minPrice >= minP && home.maxPrice <= maxP
+  );
+
+  if (homes.length === 0) {
+    return next(
+      new ErrorHandler("Homes does not exist with this price range", 400)
+    );
+  }
+
+  res.status(200).json({
+    success: true,
+    homes,
+  });
+});
