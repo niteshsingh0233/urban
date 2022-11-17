@@ -111,4 +111,4 @@ const homeSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("home", homeSchema);
+module.exports = mongoose.model("Home", homeSchema);

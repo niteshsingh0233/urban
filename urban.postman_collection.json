@@ -1,0 +1,782 @@
+{
+	"info": {
+		"_postman_id": "3cfdb527-8ee8-438c-8a03-ff12b5cad709",
+		"name": "urban",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21151945"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get User Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/v1/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update  Profile",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"nitesh singh\",\r\n    \"email\" : \"niteshsingh@gmail.com\",\r\n    \"avatar\" : {\r\n        \"public_id\" : \"this is new public id\",\r\n        \"url\" : \"this is new url\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/v1/me/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"me",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Users (Admin)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/v1/admin/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single User (Admin)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/v1/admin/user/63737d6be1a0a9abb9cd2bc2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"user",
+								"63737d6be1a0a9abb9cd2bc2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Role (Admin)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/v1/admin/user/63737d6be1a0a9abb9cd2bc2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"user",
+								"63737d6be1a0a9abb9cd2bc2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\" : \"niteshsinghh\",\r\n    \"newPassword\" : \"bacchisinghh\",\r\n    \"confirmPassword\" : \"bacchisinghh\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/v1/password/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"password",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User (Admin)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/v1/admin/user/63737d6be1a0a9abb9cd2bc2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"user",
+								"63737d6be1a0a9abb9cd2bc2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update interestedIn",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"interestedIn\" : \"buying\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/v1/user/me/interested",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"me",
+								"interested"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Wishlist Homes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/v1/me/wishlist/homes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"me",
+								"wishlist",
+								"homes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" :\"bacchi singhh\",\r\n    \"email\" : \"nit123sh@gmail.com\",\r\n    \"mobile\" : 9004690994,\r\n    \"password\" : \"bacchisinghh\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/v1/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mobile\" : \"9867651331\",\r\n    \"password\" : \"bacchisinghh\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/v1/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/v1/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"nit123sh@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/v1/password/forgot",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"password",
+								"forgot"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\" : \"nit123sh@1\",\r\n    \"confirmPassword\" : \"nit123sh@1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/v1/password/reset/c60f408cb7796f2bff890efb0b99fb8ba696bf63",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"password",
+								"reset",
+								"c60f408cb7796f2bff890efb0b99fb8ba696bf63"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Home",
+			"item": [
+				{
+					"name": "Create Home (Admin)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"kelipada 1rk flat for sale\",\r\n    \"shortDescription\" : \"flat wit good area and silent place\",\r\n    \"longDescription\" : \"the area is pretty well. One of the costliest place in this area in mumbai\",\r\n    \"address\" : {\r\n        \"addressLine1\" : \"d/104 kelipada\",\r\n        \"addressLine2\" : \"thakur village\",\r\n        \"nearbyStation\" :\"kandivali\",\r\n        \"city\" : \"mumbai\",\r\n        \"state\" : \"maharashtra\",\r\n        \"pinCode\" :400101 \r\n    },\r\n    \"maxPrice\" : \"10000\",\r\n    \"minPrice\" : \"4000\",\r\n    \"category\" : \"rent\",\r\n    \"keyHighlight\" :[\"near oxford public school\" , \"near engineering college\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/v1/admin/home/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"home",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Homes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/v1/homes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"homes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Home",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/v1/home/6373dab1b7e534b1ceec4013",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"home",
+								"6373dab1b7e534b1ceec4013"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Home (Admin)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/v1/admin/home/6373d406e9d6fda87d58ec18",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"home",
+								"6373d406e9d6fda87d58ec18"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Home (Admin)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category\" : \"buy\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/v1/admin/home/6373dab1b7e534b1ceec4013",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"home",
+								"6373dab1b7e534b1ceec4013"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "WishList home",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/v1/user/home/wishlist/6373dab1b7e534b1ceec4013",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"home",
+								"wishlist",
+								"6373dab1b7e534b1ceec4013"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove WIshlist",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/v1/user/home/wishlist/6373dab1b7e534b1ceec4013",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"home",
+								"wishlist",
+								"6373dab1b7e534b1ceec4013"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Nearby Homes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/v1/homes/borivali",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"homes",
+								"borivali"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Filtered Homes (Category)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/v1/homes/category/rent",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"homes",
+								"category",
+								"rent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Price Range Homes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/v1/homes/filter/price?minP=1000&maxP=10000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"homes",
+								"filter",
+								"price"
+							],
+							"query": [
+								{
+									"key": "minP",
+									"value": "1000"
+								},
+								{
+									"key": "maxP",
+									"value": "10000"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contact",
+			"item": [
+				{
+					"name": "Create Contact Us",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"nitesh@gmail.com\",\r\n    \"mobile\" : \"9298956321455\",\r\n    \"interestedIn\" : \"rent\",\r\n    \"message\" : \"hello.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/v1/contact/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"contact",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Contact Us",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/v1/admin/contacts/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"contacts",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Contact Us",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/v1/admin/contact/6375f9d8012e99ad921de2d5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"contact",
+								"6375f9d8012e99ad921de2d5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Contact Status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/v1/admin/contact/6375f9d8012e99ad921de2d5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"contact",
+								"6375f9d8012e99ad921de2d5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Contact Us",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/api/v1/admin/contact/6375f9d8012e99ad921de2d5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"contact",
+								"6375f9d8012e99ad921de2d5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

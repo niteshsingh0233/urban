@@ -13,6 +13,7 @@ const {
   updateUserRole,
   deleteUser,
   interestedInUpdate,
+  getAllWishlistHomes,
 } = require(`../controllers/userController`);
 const {
   isAuthenticatedUser,
@@ -52,5 +53,8 @@ router
   .put(isAuthenticatedUser, interestedInUpdate);
 
 // get all wishlist homes
+router
+  .route("/me/wishlist/homes")
+  .get(isAuthenticatedUser, getAllWishlistHomes);
 
 module.exports = router;

@@ -286,3 +286,17 @@ exports.interestedInUpdate = catchAsyncError(async (req, res, next) => {
     user,
   });
 });
+
+// get all wishlist homes
+exports.getAllWishlistHomes = catchAsyncError(async (req, res, next) => {
+  const user = await User.findById(req.user.id).populate(
+    "wishList"
+    // "name maxPrice minPrice"
+  );
+
+  res.status(200).json({
+    success: true,
+    // user,
+    wishlist: user.wishList,
+  });
+});
