@@ -2,6 +2,8 @@
 
 ## URBAN BRICKS REALTY
 
+### Backend
+
 > npm init
 >
 > npm i express mongoose
@@ -17,3 +19,9 @@
 > if process.exit(1) following message will print in case of error-:
 >
 > app crashed - waiting for file changes before starting...
+
+### Frontend
+
+> npx create-react-app frontend
+>
+> npm i axios sass react-helmet redux react-toastify react-redux
