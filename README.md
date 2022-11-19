@@ -24,4 +24,20 @@
 
 > npx create-react-app frontend
 >
-> npm i axios sass react-helmet redux react-toastify react-redux
+> npm i axios sass react-helmet redux react-toastify react-redux react-router-dom
+>
+> npm i redux-thunk @redux-devtools/extension react-icons react-circular-progressbar
+>
+> npm install @mui/material @emotion/react @emotion/styled react-rating-stars-component
+>
+> npm install @mui/icons-material
+>
+> npm i webfontloader
+>
+> npm i emailjs
+>
+> npm i swiper
+>
+> npm i @reduxjs/toolkit
+>
+> npm install bootstrap@5.2.2
